@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALGRA STORE - Robux Top Up</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08080d;
+    color: #fff;
+    padding: 28px 16px 40px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 680px;
+    margin: auto;
+  }
+
+  .hero {
+    background: linear-gradient(145deg, #1c112d, #171021);
+    border: 1px solid #43276b;
+    border-radius: 30px;
+    padding: 34px 28px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.3);
+  }
+
+  .small-title {
+    color: #b987ff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 8vw, 58px);
+    line-height: 1.05;
+    margin: 0 0 24px;
+  }
+
+  .hero p {
+    color: #aaa5b4;
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  label {
+    display: block;
+    margin: 50px 0 18px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #b9b5c3;
+  }
+
+  input {
+    width: 100%;
+    height: 74px;
+    padding: 0 28px;
+    border-radius: 28px;
+    border: 1px solid #37343f;
+    background: #101016;
+    color: white;
+    font-size: 21px;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: #9650e8;
+    box-shadow: 0 0 0 3px rgba(150,80,232,.12);
+  }
+
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 42px 0 20px;
+  }
+
+  .title-row h2 {
+    font-size: 38px;
+    margin: 0;
+  }
+
+  .badge {
+    background: #28113f;
+    color: #c49aff;
+    padding: 13px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .product {
+    background: #111117;
+    border: 1px solid #35323e;
+    border-radius: 20px;
+    padding: 20px 18px;
+    cursor: pointer;
+    transition: .18s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-2px);
+    border-color: #8f4ee0;
+  }
+
+  .product.active {
+    border: 2px solid #a85cff;
+    background: #1b1025;
+    box-shadow: 0 0 20px rgba(168,92,255,.15);
+  }
+
+  .robux {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .price {
+    margin-top: 9px;
+    color: #c99aff;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .total {
+    margin-top: 28px;
+    height: 78px;
+    border: 1px solid #35323e;
+    border-radius: 25px;
+    background: #101016;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    color: #aaa6b1;
+    font-size: 21px;
+  }
+
+  .total strong {
+    color: #fff;
+    font-size: 25px;
+  }
+
+  button {
+    width: 100%;
+    height: 86px;
+    margin-top: 28px;
+    border: 0;
+    border-radius: 28px;
+    background: linear-gradient(100deg, #9146e8, #bd6aff);
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  button:hover { filter: brightness(1.08); }
+
+  .note {
+    text-align: center;
+    color: #8d8995;
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 24px 15px 0;
+  }
+
+  footer {
+    text-align: center;
+    color: #686572;
+    font-size: 16px;
+    margin-top: 70px;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 18px 12px 30px; }
+    .hero { padding: 28px 22px; }
+    .hero p { font-size: 19px; }
+    .title-row h2 { font-size: 32px; }
+    .badge { font-size: 13px; padding: 11px 15px; }
+    .grid { gap: 10px; }
+    .product { padding: 17px 14px; }
+    .robux { font-size: 17px; }
+    .price { font-size: 16px; }
+    button { font-size: 22px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <section class="hero">
+    <div class="small-title">ROBOX TOP UP</div>
+    <h1>Robux cepat,<br>order simpel.</h1>
+    <p>Pilih nominal, masukkan username Roblox, lalu lanjutkan pesanan langsung ke WhatsApp admin.</p>
+  </section>
+
+  <label for="username">USERNAME ROBLOX</label>
+  <input id="username" type="text" placeholder="Contoh: Player123" autocomplete="off">
+
+  <div class="title-row">
+    <h2>Pilih Nominal</h2>
+    <div class="badge">LANGSUNG MASUK</div>
+  </div>
+
+  <div id="products" class="grid"></div>
+
+  <div class="total">
+    <span>Total pembayaran</span>
+    <strong id="total">Rp 0</strong>
+  </div>
+
+  <button onclick="order()">LANJUT ORDER →</button>
+
+  <div class="note">
+    Robux langsung masuk setelah pembayaran dan proses admin selesai.<br>
+    Pastikan username sudah benar.
+  </div>
+
+  <footer>ALGRA STORE © 2026 · WhatsApp 089524703450</footer>
+</div>
+
+<script>
+const products = [
+  [10, 2000],
+  [20, 5000],
+  [30, 7000],
+  [40, 8000],
+  [50, 9000],
+  [100, 17000],
+  [200, 34000],
+  [300, 51000],
+  [400, 68000],
+  [500, 85000]
+];
+
+let selected = null;
+
+const productBox = document.getElementById("products");
+const total = document.getElementById("total");
+
+function rupiah(number) {
+  return "Rp " + number.toLocaleString("id-ID");
+}
+
+products.forEach(([robux, price]) => {
+  const card = document.createElement("div");
+  card.className = "product";
+
+  card.innerHTML = `
+    <div class="robux">🪙 ${robux} Robux</div>
+    <div class="price">${rupiah(price)}</div>
+  `;
+
+  card.addEventListener("click", () => {
+    document.querySelectorAll(".product").forEach(el => {
+      el.classList.remove("active");
+    });
+
+    card.classList.add("active");
+    selected = { robux, price };
+    total.textContent = rupiah(price);
+  });
+
+  productBox.appendChild(card);
+});
+
+function order() {
+  const username = document.getElementById("username").value.trim();
+
+  if (!username) {
+    alert("Masukkan username Roblox terlebih dahulu.");
+    return;
+  }
+
+  if (!selected) {
+    alert("Pilih nominal Robux terlebih dahulu.");
+    return;
+  }
+
+  const message =
+    "Halo ALGRA STORE, saya mau order Robux.%0A%0A" +
+    "Username: " + encodeURIComponent(username) + "%0A" +
+    "Nominal: " + selected.robux + " Robux%0A" +
+    "Total: " + encodeURIComponent(rupiah(selected.price));
+
+  window.open("https://wa.me/6289524703450?text=" + message, "_blank");
+}
+</script>
+</body>
+</html>
