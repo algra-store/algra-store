@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALGRA STORE — Premium Robux Top Up</title>
+<meta name="theme-color" content="#08080b">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#050507;color:#fff;
+  background-image:
+    radial-gradient(circle at 15% 15%,rgba(255,0,40,.14),transparent 28%),
+    radial-gradient(circle at 85% 55%,rgba(255,0,40,.10),transparent 30%);
+  font-family:Arial,Helvetica,sans-serif;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
+  background-image:linear-gradient(rgba(255,0,40,.06) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,0,40,.06) 1px,transparent 1px);
+  background-size:42px 42px;
+}
+.container{width:min(1120px,calc(100% - 28px));margin:auto;position:relative}
+header{
+  height:76px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,30,60,.35);position:sticky;top:0;z-index:20;
+  background:rgba(5,5,7,.88);backdrop-filter:blur(14px)
+}
+.logo{font-weight:1000;font-size:27px;letter-spacing:-1px}
+.logo span{color:#ff263f;text-shadow:0 0 18px #ff1635}
+nav{display:flex;gap:26px}
+nav a{color:#ddd;text-decoration:none;font-weight:700;font-size:14px}
+nav a:hover{color:#ff314b}
+.online{border:1px solid #ff263f;border-radius:999px;padding:10px 16px;font-weight:800;font-size:13px;box-shadow:0 0 16px rgba(255,0,40,.22)}
+.online i{display:inline-block;width:8px;height:8px;background:#20e37b;border-radius:50%;margin-right:7px;box-shadow:0 0 10px #20e37b}
+.hero{margin-top:18px;border:1px solid #ff1838;border-radius:28px;overflow:hidden;box-shadow:0 0 35px rgba(255,0,40,.22)}
+.hero img{width:100%;display:block;aspect-ratio:1536/1024;object-fit:cover}
+.section{margin-top:28px}
+.panel{
+  border:1px solid rgba(255,28,55,.72);border-radius:26px;
+  background:linear-gradient(145deg,rgba(19,7,11,.96),rgba(7,7,9,.96));
+  box-shadow:0 0 28px rgba(255,0,40,.12);padding:30px
+}
+.kicker{display:inline-block;color:#fff;background:#e91432;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:900;letter-spacing:1px;box-shadow:0 0 18px rgba(255,0,40,.35)}
+h1{font-size:clamp(38px,6vw,70px);line-height:.98;margin:18px 0 12px}
+h1 span{color:#ff243f}
+.sub{color:#a8a4a8;line-height:1.7;font-size:17px;max-width:620px}
+label{display:block;margin:28px 0 10px;font-size:13px;font-weight:900;color:#ddd;letter-spacing:1px}
+input{width:100%;height:58px;border:1px solid #3a3033;border-radius:16px;background:#0d0d10;color:#fff;padding:0 18px;font-size:16px;outline:none}
+input:focus{border-color:#ff2744;box-shadow:0 0 0 3px rgba(255,0,40,.10)}
+.title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 16px}
+.title h2{margin:0;font-size:25px}
+.badge{color:#ff5a6c;font-size:12px;font-weight:900}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.product{min-height:145px;cursor:pointer;border:1px solid #33292c;border-radius:18px;padding:20px 14px;background:#0c0c0f;transition:.2s;position:relative;overflow:hidden}
+.product:after{content:"";position:absolute;inset:auto -25px -45px;height:90px;background:rgba(255,0,40,.12);filter:blur(25px)}
+.product:hover,.product.active{transform:translateY(-3px);border-color:#ff2745;box-shadow:0 0 22px rgba(255,0,40,.18)}
+.product.active{background:linear-gradient(145deg,#1c080d,#0b0b0e)}
+.coin{font-size:28px}
+.robux{font-size:16px;font-weight:900;margin-top:9px}
+.price{color:#ff4b60;font-size:15px;font-weight:800;margin-top:7px}
+.order{margin-top:18px;width:100%;height:60px;border:0;border-radius:16px;background:linear-gradient(100deg,#e90e2f,#ff465d);color:#fff;font-size:17px;font-weight:1000;cursor:pointer;box-shadow:0 0 24px rgba(255,0,40,.28)}
+.order:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.total{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:18px 20px;border:1px solid #30272a;border-radius:16px;background:#0b0b0e;color:#999;font-size:14px}
+.total strong{color:#fff;font-size:21px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#35282b;border:1px solid #35282b;border-radius:22px;overflow:hidden}
+.feature{background:#0b0b0e;padding:25px 18px;text-align:center}
+.feature b{display:block;margin-bottom:7px}
+.feature span{font-size:12px;color:#888}
+.icon{font-size:27px;margin-bottom:10px}
+footer{text-align:center;color:#777;padding:38px 0 55px;font-size:13px}
+@media(max-width:800px){nav{display:none}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}.panel{padding:22px}.hero{border-radius:20px}}
+@media(max-width:430px){.container{width:min(100% - 18px,1120px)}header{height:68px}.logo{font-size:23px}.online{padding:8px 11px;font-size:11px}.hero{margin-top:10px}.grid{gap:9px}.product{padding:16px 12px}.sub{font-size:15px}.features{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="logo">👑 ALGRA <span>STORE</span></div>
+  <nav><a href="#topup">Top Up</a><a href="#info">Keunggulan</a><a href="#faq">Bantuan</a></nav>
+  <div class="online"><i></i>ONLINE</div>
+</header>
+
+<section class="hero">
+  <img src="banner.png" alt="ALGRA STORE">
+</section>
+
+<section class="section panel" id="topup">
+  <div class="kicker">ROBUX TOP UP</div>
+  <h1>Robux cepat,<br><span>order simpel.</span></h1>
+  <div class="sub">Pilih nominal, masukkan username Roblox, lalu lanjutkan pesanan langsung ke WhatsApp admin.</div>
+
+  <label for="username">USERNAME ROBLOX</label>
+  <input id="username" placeholder="Contoh: Player123" autocomplete="off">
+
+  <div class="title">
+    <h2>Pilih Nominal Robux</h2>
+    <div class="badge">⚡ PROSES CEPAT</div>
+  </div>
+
+  <div id="products" class="grid"></div>
+  <div class="total"><span>Total pembayaran</span><strong id="total">Rp 0</strong></div>
+  <button class="order" id="orderBtn">ORDER VIA WHATSAPP →</button>
+</section>
+
+<section class="section features" id="info">
+  <div class="feature"><div class="icon">⚡</div><b>PROSES CEPAT</b><span>Langsung diproses</span></div>
+  <div class="feature"><div class="icon">🛡️</div><b>AMAN</b><span>Data terjaga</span></div>
+  <div class="feature"><div class="icon">💸</div><b>HARGA TERBAIK</b><span>Harga bersahabat</span></div>
+  <div class="feature"><div class="icon">👑</div><b>ALGRA STORE</b><span>Siap membantu</span></div>
+</section>
+
+<section class="section panel" id="faq">
+  <h2 style="margin-top:0">Kenapa pilih ALGRA STORE?</h2>
+  <p class="sub" style="font-size:14px">Order simpel, harga transparan, dan langsung terhubung ke admin WhatsApp.</p>
+</section>
+
+<footer id="bantuan">ALGRA STORE © 2026 · Top Up Robux</footer>
+</div>
+
+<script>
+const products=[
+  [10,2000],
+  [20,5000],
+  [30,7000],
+  [40,8000],
+  [50,9000],
+  [100,17000],
+  [200,34000],
+  [300,51000],
+  [400,68000],
+  [500,85000]
+];
+
+let selected=null;
+const box=document.getElementById("products");
+const total=document.getElementById("total");
+const rupiah=n=>"Rp "+n.toLocaleString("id-ID");
+
+products.forEach(([robux,price])=>{
+  const card=document.createElement("div");
+  card.className="product";
+  card.innerHTML=`<div class="coin">🪙</div><div class="robux">${robux.toLocaleString("id-ID")} Robux</div><div class="price">${rupiah(price)}</div>`;
+  card.onclick=()=>{
+    document.querySelectorAll(".product").forEach(x=>x.classList.remove("active"));
+    card.classList.add("active");
+    selected={robux,price};
+    total.textContent=rupiah(price);
+  };
+  box.appendChild(card);
+});
+
+document.getElementById("orderBtn").onclick=()=>{
+  const username=document.getElementById("username").value.trim();
+  if(!username)return alert("Masukkan username Roblox terlebih dahulu.");
+  if(!selected)return alert("Pilih nominal Robux terlebih dahulu.");
+
+  const text=`Halo ALGRA STORE, saya mau order Robux.\n\nUsername: ${username}\nNominal: ${selected.robux.toLocaleString("id-ID")} Robux\nTotal: ${rupiah(selected.price)}`;
+  window.open("https://wa.me/6289524703450?text="+encodeURIComponent(text),"_blank");
+};
+</script>
+</body>
+</html>
